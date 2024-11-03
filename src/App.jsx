@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { IonIcon } from '@ionic/react'
+import { musicalNotesOutline, arrowForwardCircle, arrowForwardOutline } from 'ionicons/icons';
 import './App.css'
 
 function App() {
@@ -61,39 +61,45 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1 className='logo'>GenreQuest</h1>
+      <button className='clicky'onClick={() => setCount((count) => count + 1)}>
+      <IonIcon icon={musicalNotesOutline} style={{ fontSize: '24px' }}/> 
+      </button>
+      
       <div className="card">
+        <h4>Select a .mp3 file located on your computer and hit "Upload." Our system will analyze the audio file to estimate it's genre.</h4>
         <input type="file" accept=".mp3" onChange={handleFileChange} />
-        <button onClick={uploadFile}>Upload MP3 and Call API</button>
+        <button onClick={uploadFile}>
+          Upload MP3 and Call API 
+          <IonIcon
+          className='icons' 
+          icon={ arrowForwardOutline }
+           />
+          </button>            
         <br />
+        <h4>Enter a musical genre (examples: Rock, Pop, Classical) to generate a playlist of music from that genre</h4>
         <input
           type="text"
           placeholder="Enter a name"
           value={name}
           onChange={handleNameChange}
         />
-        <button onClick={sendName}>Send Name and Call API</button>
+        <button onClick={sendName}>
+          Send Name and Call API
+          <IonIcon
+          className='icons' 
+          icon={ arrowForwardOutline }
+           />
+           </button>
         <p>{greeting}</p>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+      <p className="credits">
+        Engineered by: JD | DN | SS.
+      </p>
+      <p className='counter'>
+        {count}
       </p>
     </>
   )
 }
-
 export default App
