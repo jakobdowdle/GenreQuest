@@ -27,4 +27,4 @@ then
 
 ### `firebase deploy --only hosting`
 
-Open [https://genrequest-b68c1.web.app/]((https://genrequest-b68c1.web.app/)) to view the website.
+Open [https://genrequest-b68c1.web.app/](https://genrequest-b68c1.web.app/) to view the website.
