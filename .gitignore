@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .firebase/hosting.ZGlzdA.cache
+
+# AI training data
+Python_AI_Model/Data/genres_data/
