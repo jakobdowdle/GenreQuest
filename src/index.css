@@ -45,9 +45,19 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
+
+button .icons {
+  font-size: 24px;
+  color: #1DB954;
+
+}
+
 button:hover {
-  border-color: #646cff;
+  border-color: #1DB954;
 }
 button:focus,
 button:focus-visible {
