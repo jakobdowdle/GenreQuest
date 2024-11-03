@@ -9,7 +9,7 @@ from sklearn.metrics import classification_report
 
 # Get feature data in the csv extracted from dataset
 csv = pd.read_csv(config.csv_path) 
-features = csv.iloc[:, 1:16]
+features = csv.iloc[:, 1:len(csv.columns)-1]
 
 # Normalize the data
 mean = features.mean()

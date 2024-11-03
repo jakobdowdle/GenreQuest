@@ -9,12 +9,12 @@ from process_data import extract_features
 model = keras.models.load_model(config.model_path)
 
 # Path to the song you want to predict, and extract features
-song_path = os.path.join(config.CURRENT_DIRECTORY, 'data/genres_original/country/country.00001.wav')
+song_path = os.path.join(config.genre_data_dir, 'country/country.00001.wav')
 features = extract_features(song_path)
 
 # Read the csv to get the mean and standard deviation to normalize the feature data
 csv = pd.read_csv(config.csv_path)
-allfeatures = csv.iloc[:, 1:len(csv.columns)]
+allfeatures = csv.iloc[:, 1:len(csv.columns)-1]
 mean = allfeatures.mean()
 std = allfeatures.std()
 features = ((features - mean) / std)
