@@ -9,7 +9,7 @@ from process_data import extract_features
 model = keras.models.load_model(config.model_path)
 
 # Path to the song you want to predict, and extract features
-song_path = os.path.join(config.genre_data_dir, 'country/country.00001.wav')
+song_path = os.path.join(config.CURRENT_DIRECTORY, 'Data/genres_data/pop/pop.00079.wav')
 features = extract_features(song_path)
 
 # Read the csv to get the mean and standard deviation to normalize the feature data
@@ -28,5 +28,6 @@ predictions = np.squeeze(predictions)
 predictions_percentages = [f"{num:.2%}" for num in predictions]
 genres = os.listdir(config.genre_data_dir)
 genre_predictions = dict(zip(genres, predictions_percentages))
+print("\n")
 print(genre_predictions)
 print("The predicted genre is: " + genres[np.argmax(predictions)])
