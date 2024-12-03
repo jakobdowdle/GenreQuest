@@ -30,12 +30,13 @@ function App() {
     formData.append('file', file)  // Add file to the form data
 
     try {
-      const response = await fetch('https://test-function-1011726187231.us-central1.run.app', {
+      const response = await fetch('https://us-central1-genrequest-440522.cloudfunctions.net/function-1', {
         method: "POST",
         body: formData,
       })
-      const text = await response.text()
-      setGreeting(text)
+      const data = await response.json();  // Use .json() instead of .text()
+      setGreeting(data);  // Assuming the response is in JSON format
+      
     } catch (error) {
       console.error('Error calling API:', error)
     }
